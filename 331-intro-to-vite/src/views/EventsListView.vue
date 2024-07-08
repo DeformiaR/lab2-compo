@@ -2,9 +2,22 @@
 import EventCard from '../components/EventCard.vue'
 
 import Event from '@/types/Event'
-import { ref } from 'vue'
+import { ref, onMounted  } from 'vue'
+import axios from 'axios'
 
 const events = ref<Event[]>(null)
+
+onMounted(() => {
+  axios
+    .get('[your mock server url]')
+    .then((response) => {
+      events.value = response.data
+    })
+    .catch((error) => {
+      console.error('There was an error!', error)
+    })
+})
+
  
 
 </script>
