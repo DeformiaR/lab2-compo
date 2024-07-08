@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import StudentCard from '@/components/StudentCard.vue'
+import StudentCard from '../components/StudentCard.vue'
+
 import Student from '@types/Student'
 import { ref, onMounted } from 'vue'
 import StudentService from '@/services/StudentService'
@@ -18,11 +19,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>student</h1>
-  <!-- new element-->
-  <div class="events">
-    <StudentCard v-for="student in students" :key="student.id" :student="student" />
-  </div>
+    <h1>Student</h1>
+    <!-- new element-->
+    <div class="events">
+        <StudentCard v-for="student in students" :key="student.id" :student="student" />
+    </div>
 </template>
 
 <style scoped>
