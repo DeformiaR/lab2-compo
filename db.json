@@ -32,6 +32,18 @@
       "time": "11:00",
       "petsAllowed": false,
       "organizer": "Carey Wales"
+    },
+
+    {
+      "id": 1234567,
+      "category": "SUS",
+      "title": " Cleanup Dezz",
+      "description": "Help pick up Pee Nut along the floor.",
+      "location": "calidea",
+      "date": "june 1, 2024",
+      "time": "03:00",
+      "petsAllowed": false,
+      "organizer": " Wales"
     }
   ]
 }
