@@ -2,14 +2,13 @@
 import EventCard from '../components/EventCard.vue'
 
 import Event from '@/types/Event'
-import { ref, onMounted  } from 'vue'
-import axios from 'axios'
+import { ref, onMounted } from 'vue'
+import EventServices from '@/services/EventServices';
 
 const events = ref<Event[]>(null)
 
 onMounted(() => {
-  axios
-    .get('[your mock server url]')
+  EventServices.getEvent()
     .then((response) => {
       events.value = response.data
     })
@@ -17,22 +16,15 @@ onMounted(() => {
       console.error('There was an error!', error)
     })
 })
-
- 
-
 </script>
 
-
-
 <template>
-
   <h1>Events For good</h1>
   <!--- new element --->>
 
- <div class="events"> 
-  <EventCard v-for="event in events" :key="event.id" :event="event" />
-</div>
-   
+  <div class="events">
+    <EventCard v-for="event in events" :key="event.id" :event="event" />
+  </div>
 </template>
 
 <style scoped>
@@ -42,5 +34,3 @@ onMounted(() => {
   align-items: center;
 }
 </style>
-
-
