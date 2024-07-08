@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import EventCard from '@/components/EventCard.vue'
+import EventCard from '../components/EventCard.vue'
 
 import Event from '@/types/Event'
 import { ref } from 'vue'
