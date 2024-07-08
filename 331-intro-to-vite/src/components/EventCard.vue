@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import Event from '@types/Event';
+import { ref } from 'vue'
+import Event from '@types/Event'
 defineProps<{
   event: Event
 }>()
@@ -16,7 +16,6 @@ defineProps<{
 //   petsAllowed: true ,
 //   organizer: 'Kat Laydee'
 // })
-
 </script>
 
 <template>
