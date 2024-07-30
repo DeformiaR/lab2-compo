@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'https://my-json-server.typicode.com/DeformiaR/lab2-compo',
+  baseURL: 'https://my-json-server.typicode.com/DeformiaR/lab2-14',
   withCredentials: false,
   headers: {
     Accept: 'application/json',
@@ -12,8 +12,8 @@ const apiClient = axios.create({
 export default {
   getEvents() {
     return apiClient.get('/events')
-    },
-    getEvent(id: number) {
-      return apiClient.get('/events/' + id)
-    }
+  },
+  getEvent(id: number) {
+    return apiClient.get('/events/' + id)
+  }
 }

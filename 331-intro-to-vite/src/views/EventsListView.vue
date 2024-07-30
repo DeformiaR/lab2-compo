@@ -3,7 +3,7 @@ import EventCard from '../components/EventCard.vue'
 
 import Event from '@/types/Event'
 import { ref, onMounted } from 'vue'
-import EventServices from '@/services/EventServices'
+import EventServices from '@/services/EventService'
 
 const events = ref<Event[]>(null)
 
