@@ -4,8 +4,6 @@ import Event from '@types/Event'
 defineProps<{
   event: Event
 }>()
-
-
 </script>
 
 <template>
