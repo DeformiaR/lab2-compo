@@ -11,7 +11,6 @@ const router = createRouter({
       name: 'Event-List-view',
       component: EventListView,
       props: (route) => ({ page: parseInt(route.query.page?.toString() || '1') })
-
     },
 
     {
