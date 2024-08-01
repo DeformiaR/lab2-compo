@@ -1,5 +1,20 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue'
+import { RouterLink, RouterView, useRouter, useRoute } from 'vue-router'
+
+const pageSize = ref(5)
+const router = useRouter()
+const route = useRoute()
+
+function updatePageSize() {
+  router.push({
+    ...route,
+    query: {
+      ...route.query,
+      pageSize: pageSize.value
+    }
+  })
+}
 </script>
 
 <template>
@@ -10,6 +25,14 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink to="/">Event</RouterLink> | <RouterLink to="/about">About</RouterLink> |
           <RouterLink to="/student">Student</RouterLink>
         </nav>
+        <div class="page-size-selector">
+          <label for="pageSize">Events per page:</label>
+          <select v-model="pageSize" @change="updatePageSize">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+        </div>
       </div>
     </header>
 
@@ -38,7 +61,12 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
 h2 {
   font-size: 20px;
+}
+
+.page-size-selector {
+  margin-top: 10px;
 }
 </style>
