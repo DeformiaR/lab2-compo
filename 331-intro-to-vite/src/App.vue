@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { RouterLink, RouterView, useRouter, useRoute } from 'vue-router'
 
-const pageSize = ref(5)
+const pageSize = ref(3)
 const router = useRouter()
 const route = useRoute()
 
