@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, defineProps } from 'vue'
 import { type Event } from '@/types'
 import EventService from '@/services/EventService'
 import { useRouter } from 'vue-router'
-
 const event = ref<Event | null>(null)
+// const id = ref<number>(5928101)
 const props = defineProps({
   id: {
     type: String,
@@ -19,7 +19,6 @@ onMounted(() => {
     .then((response) => {
       event.value = response.data
     })
-
     .catch((error) => {
       if (error.response && error.response.status === 404) {
         router.push({
@@ -32,16 +31,13 @@ onMounted(() => {
     })
 })
 </script>
-
 <template>
   <div v-if="event">
     <h1>{{ event.title }}</h1>
     <nav>
-      <RouterLink :to="{ name: 'event-detail-view' }">Details</RouterLink>
-      |
-      <RouterLink :to="{ name: 'event-register-view' }">Register</RouterLink>
-      |
-      <RouterLink :to="{ name: 'event-edit-view' }">Edit</RouterLink>
+      <router-link :to="{ name: 'event-detail-view' }"> Details </router-link> |
+      <router-link :to="{ name: 'event-register-view' }"> Register </router-link> |
+      <router-link :to="{ name: 'event-edit-view' }"> Edit </router-link>
     </nav>
     <RouterView :event="event" />
   </div>
